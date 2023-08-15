@@ -35,6 +35,8 @@ android {
     }
 }
 
+apply plugin: 'kotlin-kapt'
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -49,4 +51,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.0"
     implementation "androidx.activity:activity-ktx:1.2.0"
 
+    // Live Data
+    implementation "androidx.lifecycle:lifecycle-livedata:2.3.0"
+    kapt "androidx.lifecycle:lifecycle-compiler:2.2.0"
 }

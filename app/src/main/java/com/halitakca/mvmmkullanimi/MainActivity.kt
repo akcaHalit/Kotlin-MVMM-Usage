@@ -17,17 +17,20 @@ class MainActivity : AppCompatActivity() {
         binding.mainActivityNesnesi = this
 
         //binding.hesaplamaSonucu = "0"
-        binding.hesaplamaSonucu = viewModel.sonuc
+        //binding.hesaplamaSonucu = viewModel.sonuc
+        viewModel.sonuc.observe(this, { s ->
+            binding.hesaplamaSonucu = s
+        })
 
 
     }
 
     fun buttonToplama(alinanSayi1: String, alinanSayi2: String){
         viewModel.toplamaYap(alinanSayi1,alinanSayi2)
-        binding.hesaplamaSonucu = viewModel.sonuc
+        //binding.hesaplamaSonucu = viewModel.sonuc        WE DON'T NEED THIS ANYMORE WİTH LİVE DATA
     }
     fun buttonCarpma(alinanSayi1: String, alinanSayi2: String){
         viewModel.carpmaYap(alinanSayi1,alinanSayi2)
-        binding.hesaplamaSonucu = viewModel.sonuc
+        //binding.hesaplamaSonucu = viewModel.sonuc        WE DON'T NEED THIS ANYMORE WİTH LİVE DATA
     }
 }
