@@ -12,9 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         binding.mainActivityNesnesi = this
-
-        binding.sonucText.text = "0"
-
+        binding.hesaplamaSonucu = "0"
     }
 
     fun buttonToplama(alinanSayi1: String, alinanSayi2: String){
@@ -24,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val sonuc = sayi1 + sayi2
 
-        binding.sonucText.text = sonuc.toString()
+        binding.hesaplamaSonucu = sonuc.toString()
     }
     fun buttonCarpma(alinanSayi1: String, alinanSayi2: String){
 
@@ -33,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         val sonuc = sayi1 * sayi2
 
-        binding.sonucText.text = sonuc.toString()
-
+        binding.hesaplamaSonucu = sonuc.toString()
     }
 }
