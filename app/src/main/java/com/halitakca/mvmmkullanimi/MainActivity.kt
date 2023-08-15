@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         binding.mainActivityNesnesi = this
 
-        //binding.hesaplamaSonucu = "0"
-        //binding.hesaplamaSonucu = viewModel.sonuc
+        //binding.hesaplamaSonucu = "0"    without View Model
+        //binding.hesaplamaSonucu = viewModel.sonuc     with ViewModel
         viewModel.sonuc.observe(this, { s ->
             binding.hesaplamaSonucu = s
         })
@@ -27,10 +27,10 @@ class MainActivity : AppCompatActivity() {
 
     fun buttonToplama(alinanSayi1: String, alinanSayi2: String){
         viewModel.toplamaYap(alinanSayi1,alinanSayi2)
-        //binding.hesaplamaSonucu = viewModel.sonuc        WE DON'T NEED THIS ANYMORE WİTH LİVE DATA
+        //binding.hesaplamaSonucu = viewModel.sonuc        with LiveData We DON'T NEED THIS
     }
     fun buttonCarpma(alinanSayi1: String, alinanSayi2: String){
         viewModel.carpmaYap(alinanSayi1,alinanSayi2)
-        //binding.hesaplamaSonucu = viewModel.sonuc        WE DON'T NEED THIS ANYMORE WİTH LİVE DATA
+        //binding.hesaplamaSonucu = viewModel.sonuc        with LiveData We DON'T NEED THIS
     }
 }
